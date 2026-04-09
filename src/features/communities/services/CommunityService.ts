@@ -11,12 +11,14 @@ class CommunityService {
 
     async createCommunity(data: CommunityFormType, userId: string) {
 
-        const response = await this.communityRepository.createCommunity(
+        const community = await this.communityRepository.createCommunity(
             {
                 ...data,
                 createdBy: userId
             }
         )
+        return community;
+
     }
 
 }

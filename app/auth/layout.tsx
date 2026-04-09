@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
-import { requiredAuth } from "@/src/lib/auth-server.";
+import { requiredAuth } from "@/lib/auth-server";
 import { redirect } from "next/navigation";
 
 

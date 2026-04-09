@@ -2,6 +2,7 @@
 import { FormError, FormInput, FormLabel, FormTextArea } from '@/components/forms'
 import { useFormContext } from 'react-hook-form'
 import { CommunityFormType } from '../schemas/communitySchema'
+import { UploadDropzone } from '@/shared/utils/uploadthing'
 
 
 
@@ -22,6 +23,10 @@ export default function CommunityForm() {
                 />
                 {errors.name && <FormError>{errors.name.message}</FormError>}
             </div>
+
+            <UploadDropzone
+                endpoint={'meetiUploader'}
+            />
 
             <div className='space-y-1'>
 

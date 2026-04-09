@@ -1,4 +1,4 @@
-import { requiredAuth } from "@/src/lib/auth-server.";
+import { requiredAuth } from "@/lib/auth-server";
 import Heading from "@/src/shared/components/typography/Heading";
 import { redirect } from "next/navigation";
 

@@ -1,7 +1,7 @@
 'use server'
 
 
-import { requiredAuth } from "@/lib/auth-server.";
+import { requiredAuth } from "@/lib/auth-server";
 import { CommunityFormType, CommunitySchema } from "../schemas/communitySchema";
 import { communityService } from "../services/CommunityService";
 
@@ -26,7 +26,10 @@ export async function createCommunity(input: CommunityFormType) {
         }
     }
 
-    const response = communityService.createCommunity(result.data, session.user.id)
-    return response;
+    await communityService.createCommunity(result.data, session.user.id)
+    return {
+        success: 'Comunidad creada exitosamente',
+        error: ''
+    };
 
 }

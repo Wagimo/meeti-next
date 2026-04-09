@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { CommunityFormType, CommunitySchema } from '../schemas/communitySchema'
 import { createCommunity } from '../actions/communityAction'
 import toast from 'react-hot-toast'
+import { redirect } from 'next/navigation'
 
 export default function CreateCommunity() {
 
@@ -25,6 +26,7 @@ export default function CreateCommunity() {
         const { success, error } = await createCommunity(data)
         if (success) {
             toast.success(success)
+            redirect('/dashboard/communities')  // Redirige a la página de comunidades después de crear una comunidad exitosamente
         }
         if (error) {
             toast.error(error)
